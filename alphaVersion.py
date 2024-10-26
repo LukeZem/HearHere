@@ -55,11 +55,14 @@ load_dotenv()
 api_key = os.getenv("API_KEY")
 if not api_key:
     raise ValueError("API_KEY is not set in the environment variables.")
+url = os.getenv("URL")
+if not url:
+    raise ValueError("URL is not set in the environment variables.")
 
 # IBM Watson Speech-to-Text credentials
 auth_string = f"apikey:{api_key}"
 auth_base64 = base64.b64encode(auth_string.encode()).decode()
-url = "wss://api.us-south.speech-to-text.watson.cloud.ibm.com/v1/recognize"
+
 
 # GUI setup
 root = tk.Tk()
