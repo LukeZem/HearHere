@@ -14,9 +14,10 @@ HearHere is a real-time speech-to-text transcription application that captures a
 6. [Configuration](#configuration)
 7. [Running the App](#running-the-app)
 8. [How It Works](#how-it-works)
-9. [Troubleshooting](#troubleshooting)
-10. [Contributing](#contributing)
-11. [License](#license)
+9. [Future Improvements](#future-improvements)
+10. [Troubleshooting](#troubleshooting)
+11. [Contributing](#contributing)
+12. [License](#license)
 
 ---
 
@@ -29,7 +30,6 @@ HearHere is a real-time speech-to-text transcription application that captures a
 - **Real-time, continuous transcription** of microphone audio.
 - **IBM Watson Large Speech Models (LSM)** for improved recognition accuracy.
 - **Responsive, easy-to-use GUI** with Tkinter.
-- **Automatic line breaks** and pausing options for natural readability.
 - **Auto-reconnection** if WebSocket or API connection is interrupted.
 
 ---
@@ -43,11 +43,7 @@ Ensure the following prerequisites are met before proceeding:
 
 ### Python Packages
 
-- `json`: For JSON data parsing with IBM Watson API.
-- `threading`: Manages concurrency, allowing continuous audio capture and display updates.
-- `tkinter`: Provides the GUI framework.
-- `pyaudio`: Captures audio input from the system's microphone.
-- `dotenv`: Reads environment variables from a `.env` file.
+The required Python packages are listed in the `requirements.txt` file in the repository.
 
 ---
 
@@ -83,6 +79,8 @@ Ensure the following prerequisites are met before proceeding:
     ```
 
 2. **Install Dependencies**
+
+    Install all required packages listed in `requirements.txt`:
 
     ```bash
     pip install -r requirements.txt
@@ -134,10 +132,28 @@ The GUI window will open, capturing audio from your microphone and displaying tr
    - Utilizes IBM Watson’s LSM for high-quality speech recognition.
 
 4. **Real-Time Display**  
-   - Transcriptions appear in real-time on a Tkinter GUI, with options to automatically detect pauses and insert line breaks.
+   - Transcriptions appear in real-time on a Tkinter GUI.
 
 5. **Error Handling**  
    - Reconnects automatically if there’s an interruption in the WebSocket connection.
+
+---
+
+## Future Improvements
+
+The following features are planned for future releases of HearHere to improve functionality and usability:
+
+- **Automatic Line Breaks Based on Pause Detection**  
+    Detects natural pauses in speech and inserts line breaks for improved readability.
+
+- **Grammar and Syntax Prediction**  
+    Integrates Natural Language Processing (NLP) for more accurate sentence structuring.
+
+- **Export Options for Dialogs**  
+    Enables saving transcriptions to various formats, such as DOCX, PDF, and TXT, for archival or sharing purposes.
+
+- **Customizable Transcription Settings**  
+    Allows users to adjust settings, such as font size, color scheme, and text alignment, directly in the GUI.
 
 ---
 
