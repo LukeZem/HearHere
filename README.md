@@ -123,19 +123,19 @@ The GUI window will open, capturing audio from your microphone and displaying tr
 ## How It Works
 
 1. **Audio Capture**  
-   - Captures live audio input from the microphone using `pyaudio`.
-   
+   - Captures live audio input from the microphone using `pyaudio`, configuring input stream parameters such as sample rate, channels, and buffer size to ensure high-fidelity audio capture, essential for accurate real-time speech recognition.
+
 2. **WebSocket Connection**  
-   - Establishes a connection to IBM Watson via WebSocket for continuous, low-latency communication.
+   - Establishes a low-latency, asynchronous WebSocket connection to IBM Watson’s servers, allowing bidirectional, near-instantaneous data transfer that supports streaming audio data continuously without buffering interruptions.
 
 3. **Speech Recognition**  
-   - Utilizes IBM Watson’s LSM for high-quality speech recognition.
+   - Leverages IBM Watson’s Language-Specific Model (LSM) for speech recognition, which applies advanced deep learning and natural language processing algorithms to parse audio with high accuracy, even in environments with moderate background noise or varying accents.
 
 4. **Real-Time Display**  
-   - Transcriptions appear in real-time on a Tkinter GUI.
+   - Processes and displays transcriptions dynamically within a custom Tkinter GUI, utilizing a continuous update loop to refresh text output as soon as new segments of recognized speech are received, creating a smooth real-time experience for users.
 
 5. **Error Handling**  
-   - Reconnects automatically if there’s an interruption in the WebSocket connection.
+   - Implements robust error handling routines to detect and address WebSocket connection issues, automatically attempting to reconnect and resume the audio stream to maintain uninterrupted transcription in case of network disruptions or server timeouts.
 
 ---
 
@@ -154,6 +154,15 @@ The following features are planned for future releases of HearHere to improve fu
 
 - **Customizable Transcription Settings**  
     Allows users to adjust settings, such as font size, color scheme, and text alignment, directly in the GUI.
+
+- **Full-Duplex Communication with Encrypted TCP Connection**  
+    Establishes a full-duplex communication channel over a single TCP connection, using TLS/SSL protocols to implement industry-standard encryption. This secures audio data with end-to-end encryption, ensuring data integrity and confidentiality, while allowing simultaneous two-way data flow in real-time.
+
+- **Multi-Language Support**  
+    Enables users to select from a range of languages for transcription, automatically adjusting the speech recognition model to accurately capture and transcribe in the chosen language. This feature includes localized text options for the GUI to create a seamless experience for non-English speakers.
+
+- **Adjustable Transcription Speed and Text-to-Speech**  
+    Allows users to control the pace of the transcription playback and includes a text-to-speech feature that reads transcriptions aloud, supporting users with reading difficulties or cognitive impairments.
 
 ---
 
