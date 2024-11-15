@@ -1,4 +1,3 @@
 websocket-client
-pyaudio
 numpy
 python-dotenv
